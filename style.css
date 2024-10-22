@@ -21,6 +21,7 @@ h2 {
 /* Estilo para párrafos */
 p {
     line-height: 1.6;
+    margin-bottom: 15px; /* Añadido para espaciado entre párrafos */
 }
 
 /* Estilo para listas */
@@ -63,4 +64,19 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/* Estilo de botones */
+button {
+    background-color: #4CAF50; /* Mismo color que los encabezados */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px; /* Esquinas redondeadas */
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049; /* Color más oscuro al pasar el ratón */
 }
