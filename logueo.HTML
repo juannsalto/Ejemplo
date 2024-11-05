@@ -1,25 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 
- <script> src ="varios.js"</script>
-
- <script>
-  function redireccionar() {
-    event.preventDefault(); 
-    window.location.href = "bienvenido.html"; 
-  }
- </script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="varios.js" defer></script> <!-- Usar defer para asegurar que el script se cargue después del HTML -->
     <title>Ingrese a nuestro sitio</title>
 </head>
 <body>
     <div class="container">
         <h1>Registro</h1>
-        <!-- action="bienvenido.html" -->
-        <form id="registro" onsubmit="redireccionar(event)">
+        <form id="registro"> 
             <div>
                 <label for="email">Ingrese email:</label>
                 <input type="email" id="email" >

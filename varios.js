@@ -1,27 +1,16 @@
-function redireccionar() {
-    event.preventDefault(); 
-    window.location.href = "bienvenido.html"; 
-}
+function enviarDatos(event) {
+    event.preventDefault(); // Evitar el envío del formulario por defecto
 
-
-document.getElementById('registro').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evitar que se recargue la página
-    enviarDatos();
-});
-
-function enviarDatos() {
     // Obtener los valores del formulario
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
     // Crear un objeto con los datos
-    const data = {
-        email: email,
-        password: password
-    };
+    const data = { email, password };
+    console.log(data);
 
     // Enviar los datos al servidor
-    fetch('https://tu-api.com/login', {
+    fetch('/logueo', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -36,8 +25,17 @@ function enviarDatos() {
     })
     .then(data => {
         console.log('Éxito:', data);
+        alert(data.message); // Mostrar mensaje de éxito
     })
-    .catch((error) => {
-        console.error('Error:', error);
+    .catch(() => {
+        alert('Error al iniciar sesión.');
     });
 }
+
+// Agregar el evento de escucha para el formulario una vez que el DOM esté cargado
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('registro');
+    if (form) {
+        form.addEventListener('submit', enviarDatos);
+    }
+});
