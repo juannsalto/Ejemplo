@@ -1,10 +1,13 @@
-// escuchar evento
-document.addEventListener('DOMContentLoaded', () => { //toma el documento, escucha despues de la carga del DOM
-    const form = document.getElementById('registro'); // toma el formulario, todo se hace por id, no pueden faltar en el html
+
+// funcion para escuchar un evento
+function iniciarFormulario() {
+    const form = document.getElementById('registro'); // toma el formulario por id
     if (form) {
-        form.addEventListener('submit', enviarDatos);
+        form.addEventListener('submit', enviarDatos); // asocia el evento 'submit' al formulario
     }
-});
+}
+
+//funcion para enviar datos
 
 function enviarDatos(event) {
     event.preventDefault(); // Evita el envío del formulario
@@ -21,8 +24,10 @@ function enviarDatos(event) {
     console.log('Datos enviados correctamente'); // imprime en consola, se ve apretando f12 en el navegador y yendo a consola
     alert('Datos enviados correctamente para el email: ' + email); // Muestra msj en navegador 
 
-}
-    function enviarDatos2(event) {
+    }
+
+ //DOCUMENTO JAVSCRIPT #2
+function enviarDatos2(event) {
     event.preventDefault(); // Evitar el envío del formulario por defecto
 
     // Obtener los valores del formulario
