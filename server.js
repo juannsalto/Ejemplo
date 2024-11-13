@@ -17,6 +17,7 @@ app.get('/inicio', (req, res) => {
 app.post('/logueo', (req, res) => {
   const { email, password } = req.body;
 
+  //acá vamos a agregar una llamada a la BD
   if (email === 'usuario@example.com' && password === 'password123') {
       res.json({ message: '¡Bienvenido!' });
   } else {
@@ -26,10 +27,6 @@ app.post('/logueo', (req, res) => {
 
 app.get('/bienvenido', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'bienvenido.html'));
-});
-
-app.get('/modal', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'modal.html'));
 });
 
 // Iniciar el servidor
